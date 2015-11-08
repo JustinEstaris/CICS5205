@@ -1,0 +1,52 @@
+* Mapset: 
+JEMAP1  DFHMSD TYPE=MAP,                                               -
+               LANG=COBOL,                                             -
+               MODE=INOUT,                                             -
+               TERM=3270-2,                                            -
+               STORAGE=AUTO,                                           -
+               TIOAPFX=YES
+* Map:  
+MAP1 DFHMDI SIZE=(24,80),                                              -
+               CTRL=FREEKB
+* Define display fields
+        DFHMDF POS=(2,1),                                              -
+               LENGTH=7,                                               -
+               INITIAL='JUSTIN ',                                      -
+               ATTRB=(ASKIP)
+        DFHMDF POS=(3,1),                                              -
+               LENGTH=7,                                               -
+               INITIAL='ESTARIS',                                      -
+               ATTRB=(ASKIP) 
+        DFHMDF POS=(3,31),LENGTH=18,INITIAL='M A I N    M E N U',      -
+               ATTRB=ASKIP
+        DFHMDF POS=(4,33),LENGTH=14,INITIAL='==============',          -
+               ATTRB=ASKIP
+        DFHMDF POS=(7,17),                                             -
+               LENGTH=28,                                              -
+               INITIAL='CHOICE 1 - ENTER NEW INVOICE',                 -
+               ATTRB=ASKIP
+        DFHMDF POS=(9,17),                                             -
+               LENGTH=37,                                              -
+               INITIAL='CHOICE 2 - VIEW/CHANGE/DELETE INVOICE' ,       -
+               ATTRB=ASKIP
+        DFHMDF POS=(11,17),                                            -
+               LENGTH=40,                                              -
+               INITIAL='CHOICE 3 - BROWSE ORDERS BY CONTACT NAME' ,    -
+               ATTRB=ASKIP
+        DFHMDF POS=(13,17),                                            -
+               LENGTH=27,                                              -
+               INITIAL='CHOICE 4 - EXIT THIS SCREEN' ,                 -
+               ATTRB=ASKIP  
+        DFHMDF POS=(22,23),                                            -
+               LENGTH=35,                                              -
+               INITIAL='PRESS F9 OR ENTER 9 TO EXIT PROGRAM' ,         -
+               ATTRB=ASKIP
+*Define prompt and input fields
+        DFHMDF POS=(16,26),LENGTH=23,INITIAL='ENTER YOUR CHOICE HERE:',- 
+               ATTRB=ASKIP
+CHOICE  DFHMDF POS=(16,51),LENGTH=1,ATTRB=(UNPROT,FSET,IC)
+        DFHMDF POS=(16,53),LENGTH=1,ATTRB=ASKIP
+MSG     DFHMDF POS=(19,30),LENGTH=40,ATTRB=(ASKIP,BRT)
+* End mapset: 
+        DFHMSD TYPE=FINAL
+        END 

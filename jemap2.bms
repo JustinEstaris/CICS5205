@@ -1,0 +1,138 @@
+* Mapset: 
+JEMAP2  DFHMSD LANG=COBOL,                                             -
+               MODE=INOUT,                                             -
+               STORAGE=AUTO,                                           -
+               TERM=3270-2,                                            -
+               TIOAPFX=YES,                                            -
+               TYPE=MAP 
+* Map:  
+MAP2    DFHMDI CTRL=(FREEKB),                                          -
+               SIZE=(24,80) 
+* Defined display fields
+        DFHMDF POS=(2,1),                                              -
+               LENGTH=7,                                               -
+               INITIAL='JUSTIN ',                                      -
+               ATTRB=(ASKIP)
+        DFHMDF POS=(3,1),                                              -
+               LENGTH=7,                                               -
+               INITIAL='ESTARIS',                                      -
+               ATTRB=(ASKIP) 
+TITLE   DFHMDF POS=(2,28),                                             -
+               LENGTH=28,                                              -
+               INITIAL='I N Q U I R Y    S C R E E N',                 -
+               ATTRB=(ASKIP)
+        DFHMDF POS=(3,28),                                             -
+               LENGTH=28,                                              - 
+               INITIAL='============================',                 -
+               ATTRB=(ASKIP)                                          
+        DFHMDF POS=(5,28),                                             -
+               LENGTH=14,                                              -
+               INITIAL='INVOICE NUMBER',                               -
+               ATTRB=(ASKIP)
+* Product #1
+        DFHMDF POS=(7,28),                                             -
+               LENGTH=13,                                              -
+               INITIAL='PRODUCTS:  1)',                                -
+               ATTRB=(ASKIP)
+PROD1A  DFHMDF POS=(7,42),LENGTH=4,                                    -
+               ATTRB=ASKIP        
+PROD1B  DFHMDF POS=(7,47),LENGTH=4,ATTRB=ASKIP
+        DFHMDF POS=(7,52),LENGTH=1,ATTRB=ASKIP                         
+* Product #2
+        DFHMDF POS=(8,39),                                             -
+               LENGTH=2,                                               -
+               INITIAL='2)',                                           -
+               ATTRB=(ASKIP)
+PROD2A  DFHMDF POS=(8,42),LENGTH=4,                                    -
+               ATTRB=ASKIP
+PROD2B  DFHMDF POS=(8,47),LENGTH=4,                                    -
+               ATTRB=ASKIP
+        DFHMDF POS=(8,52),LENGTH=1,ATTRB=ASKIP         
+* Product #3
+        DFHMDF POS=(9,39),                                             -
+               LENGTH=2,                                               -
+               INITIAL='3)',                                           -
+               ATTRB=(ASKIP)
+PROD3A  DFHMDF POS=(9,42),LENGTH=4,                                    -
+               ATTRB=ASKIP
+PROD3B  DFHMDF POS=(9,47),LENGTH=4,                                    -
+               ATTRB=ASKIP
+        DFHMDF POS=(9,52),LENGTH=1,ATTRB=ASKIP         
+* Product #4
+        DFHMDF POS=(10,39),                                            -
+               LENGTH=2,                                               -
+               INITIAL='4)',                                           -
+               ATTRB=(ASKIP)
+PROD4A  DFHMDF POS=(10,42),LENGTH=4,                                   -
+               ATTRB=ASKIP
+PROD4B  DFHMDF POS=(10,47),LENGTH=4,                                   -
+               ATTRB=ASKIP
+        DFHMDF POS=(10,52),LENGTH=1,ATTRB=ASKIP         
+* Product #5
+        DFHMDF POS=(11,39),                                            -
+               LENGTH=2,                                               -
+               INITIAL='5)',                                           -
+               ATTRB=(ASKIP)
+PROD5A  DFHMDF POS=(11,42),LENGTH=4,                                   -   
+               ATTRB=ASKIP
+PROD5B  DFHMDF POS=(11,47),LENGTH=4,                                   -
+               ATTRB=ASKIP
+        DFHMDF POS=(11,52),LENGTH=1,ATTRB=ASKIP         
+* Contact Information
+        DFHMDF POS=(12,22),                                            -
+               LENGTH=16,                                              -
+               INITIAL='CONTACT NAME   :',                             -
+               ATTRB=(ASKIP)
+NAME    DFHMDF POS=(12,39),LENGTH=20,                                  -
+               ATTRB=ASKIP  
+        DFHMDF POS=(12,60),LENGTH=1,ATTRB=ASKIP          
+* Address Information - Line 1
+        DFHMDF POS=(14,28),                                            -
+               LENGTH=10,                                              -
+               INITIAL='ADDRESS  :',                                   -
+               ATTRB=ASKIP
+ALINE1  DFHMDF POS=(14,39),LENGTH=20,                                  -
+               ATTRB=ASKIP
+        DFHMDF POS=(14,60),LENGTH=1,ATTRB=ASKIP         
+ALINE2  DFHMDF POS=(15,39),LENGTH=20,                                  -
+               ATTRB=ASKIP
+        DFHMDF POS=(15,60),LENGTH=1,ATTRB=ASKIP           
+ALINE3  DFHMDF POS=(16,39),LENGTH=20,                                  -
+               ATTRB=ASKIP
+        DFHMDF POS=(16,60),LENGTH=1,ATTRB=ASKIP    
+* Postal Code
+POST1   DFHMDF POS=(17,39),LENGTH=3,                                   -
+               ATTRB=ASKIP
+POST2   DFHMDF POS=(17,43),LENGTH=3,                                   -
+               ATTRB=ASKIP
+        DFHMDF POS=(17,47),LENGTH=1,ATTRB=ASKIP           
+* Phone Number
+        DFHMDF POS=(19,28),LENGTH=8,INITIAL='PHONE: (',                -
+               ATTRB=ASKIP
+AREA    DFHMDF POS=(19,37),LENGTH=3,                                   -
+               ATTRB=ASKIP
+        DFHMDF POS=(19,41),LENGTH=1,INITIAL=')',                       -
+               ATTRB=ASKIP
+PREFIX  DFHMDF POS=(19,44),LENGTH=3,                                   -
+               ATTRB=ASKIP
+        DFHMDF POS=(19,48),LENGTH=1,INITIAL='–',                       -
+               ATTRB=ASKIP
+LINENUM DFHMDF POS=(19,50),LENGTH=4,                                   -
+               ATTRB=ASKIP
+        DFHMDF POS=(19,55),LENGTH=1,ATTRB=ASKIP
+        DFHMDF POS=(19,60),LENGTH=1,ATTRB=ASKIP
+* Legend
+        DFHMDF POS=(5,1),LENGTH=16,                                    -
+               INITIAL='F1: BACK TO MENU',                             -
+               ATTRB=ASKIP
+        DFHMDF POS=(6,1),LENGTH=16,                                    -
+               INITIAL='F9: EXIT PROGRAM',                             -
+               ATTRB=ASKIP                                           
+* Input Field
+INVNUM  DFHMDF POS=(5,43),LENGTH=7,ATTRB=(UNPROT,FSET,IC)
+        DFHMDF POS=(5,51),LENGTH=1,ATTRB=ASKIP               
+* Output Field 
+MSG     DFHMDF POS=(21,28),LENGTH=40,ATTRB=(ASKIP,BRT)                                                            
+        DFHMSD TYPE=FINAL
+        END  
+* End mapset: 
